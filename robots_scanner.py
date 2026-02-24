@@ -1,4 +1,21 @@
 """
+Copyright (C) 2026 rebugui
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+
+"""
 Robots.txt Scanner Module
 
 This module provides asynchronous functionality to scan robots.txt files
@@ -140,7 +157,7 @@ class RobotsScanner:
                 
         Example:
             >>> scanner = RobotsScanner()
-            >>> content = "User-agent: *\\nDisallow: /admin\\nSitemap: https://example.com/sitemap.xml"
+            >>> content = "User-agent: *\nDisallow: /admin\nSitemap: https://example.com/sitemap.xml"
             >>> sitemaps, disallowed, allowed, delays, agents = scanner._parse_robots_content(content)
         """
         sitemaps = []
@@ -151,7 +168,8 @@ class RobotsScanner:
         
         current_agent = '*'
         
-        lines = content.split('\n')
+        lines = content.split('
+')
         
         for line in lines:
             line = line.strip()

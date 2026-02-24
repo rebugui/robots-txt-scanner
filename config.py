@@ -1,4 +1,21 @@
 """
+Copyright (C) 2026 rebugui
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+
+"""
 Configuration Module
 
 This module provides configuration management and utility functions
@@ -211,7 +228,7 @@ def print_progress(current: int, total: int, prefix: str = "Progress"):
     filled = int(bar_length * current // total) if total > 0 else 0
     bar = '█' * filled + '-' * (bar_length - filled)
     
-    print(f'\r{prefix}: |{bar}| {percent:.1f}% ({current}/{total})', end='', flush=True)
+    print(f'{prefix}: |{bar}| {percent:.1f}% ({current}/{total})', end='', flush=True)
     
     if current == total:
         print()  # New line when complete
@@ -222,7 +239,8 @@ if __name__ == "__main__":
     create_sample_config()
     
     # Test utilities
-    print("\nUtility Tests:")
+    print("
+Utility Tests:")
     print(f"Format size: {format_size(1024567)}")
     print(f"Format duration: {format_duration(125.5)}")
     print_banner()

@@ -1,3 +1,20 @@
+"""
+Copyright (C) 2026 rebugui
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+
 ﻿#!/usr/bin/env python3
 """
 Robots.txt Scanner - Main Entry Point
@@ -189,7 +206,8 @@ def scan_robots(
         List[RobotsEntry]: List of scan results
     """
     if verbose:
-        print(f"\n[*] Starting robots.txt scan...")
+        print(f"
+[*] Starting robots.txt scan...")
         print(f"    URLs to scan: {len(urls)}")
         print(f"    Concurrent requests: {concurrent}")
         print(f"    Timeout: {timeout}s")
@@ -205,7 +223,8 @@ def scan_robots(
     results = scanner.scan_urls_sync(urls)
     
     if verbose:
-        print(f"\n[*] Scan completed. {len(results)} results collected.")
+        print(f"
+[*] Scan completed. {len(results)} results collected.")
     
     return results
 
@@ -232,7 +251,8 @@ def output_results(
     if output_file:
         # Save to file
         if verbose:
-            print(f"\n[*] Saving results to: {output_file}")
+            print(f"
+[*] Saving results to: {output_file}")
         
         formatter.save_to_file(
             output_file,
@@ -244,14 +264,16 @@ def output_results(
         
         # Show summary unless quiet
         if not quiet:
-            print("\n" + formatter.get_summary())
+            print("
+" + formatter.get_summary())
     else:
         # Output to stdout
         print(formatter.to_json(include_content=include_content))
         
         # Show summary if verbose and not quiet
         if verbose and not quiet:
-            print("\n" + formatter.get_summary())
+            print("
+" + formatter.get_summary())
 
 
 def main() -> int:
@@ -269,7 +291,8 @@ def main() -> int:
         urls = collect_urls(args)
         
         if args.verbose:
-            print(f"\n[*] Found {len(urls)} unique base URLs to scan")
+            print(f"
+[*] Found {len(urls)} unique base URLs to scan")
         
         # Scan robots.txt
         results = scan_robots(
@@ -300,7 +323,9 @@ def main() -> int:
         return 1
     
     except KeyboardInterrupt:
-        print("\n\nScan interrupted by user.", file=sys.stderr)
+        print("
+
+Scan interrupted by user.", file=sys.stderr)
         return 1
     
     except Exception as e:
