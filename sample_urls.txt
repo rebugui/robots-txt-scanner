@@ -1,0 +1,28 @@
+# Sample URLs for robots.txt scanning
+# Lines starting with # are comments
+
+# E-commerce sites
+https://www.amazon.com
+https://www.ebay.com
+https://www.shopify.com
+
+# Social media
+https://www.facebook.com
+https://www.twitter.com
+https://www.linkedin.com
+
+# Tech companies
+https://www.google.com
+https://www.github.com
+https://www.microsoft.com
+https://www.apple.com
+
+# News sites
+https://www.cnn.com
+https://www.bbc.com
+https://www.nytimes.com
+
+# Korean sites
+https://www.naver.com
+https://www.daum.net
+https://www.kakao.com
